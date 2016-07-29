@@ -1,0 +1,17 @@
+[
+  {
+    "id": "root",
+    "type": "NIN.RootNode",
+    "x": -46,
+    "y": 190
+  },
+  {
+    "id": "disco",
+    "type": "DiscoFloorNode",
+    "connectedTo": {
+      "render": "root.screen"
+    },
+    "x": -345,
+    "y": -30
+  }
+]
