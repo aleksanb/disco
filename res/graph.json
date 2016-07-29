@@ -2,8 +2,8 @@
   {
     "id": "root",
     "type": "NIN.RootNode",
-    "x": -46,
-    "y": 190
+    "x": -287,
+    "y": 249
   },
   {
     "id": "disco",
@@ -11,7 +11,7 @@
     "connectedTo": {
       "render": "root.screen"
     },
-    "x": -345,
-    "y": -30
+    "x": -409,
+    "y": 4
   }
 ]
