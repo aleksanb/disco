@@ -64,6 +64,9 @@
   class DiscoFloorNode extends NIN.Node {
     constructor(id, options) {
       super(id, {
+        inputs: {
+          camera: new NIN.CameraInput()
+        },
         outputs: {
           render: new NIN.TextureOutput()
         }
@@ -99,9 +102,6 @@
       //pointLight.position.y = 50;
       //pointLight.position.z = 130;
       //this.scene.add(pointLight);
-
-      this.camera.position.set(150, 100, 150);
-      this.camera.lookAt(new THREE.Vector3(0, 0, 0));
     }
 
     update(frame) {
@@ -122,7 +122,7 @@
     }
 
     render(renderer) {
-      renderer.render(this.scene, this.camera, this.renderTarget, true);
+      renderer.render(this.scene, this.inputs.camera.getValue(), this.renderTarget, true);
       this.outputs.render.setValue(this.renderTarget.texture);
     }
   }

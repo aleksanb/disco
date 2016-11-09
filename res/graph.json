@@ -1,17 +1,23 @@
 [
   {
+    "id": "camera",
+    "type": "NIN.CameraNode",
+    "connectedTo": {
+      "camera": "disco.camera"
+    },
+    "options": {
+      "path": "res/disco.camera.json"
+    }
+  },
+  {
     "id": "root",
-    "type": "NIN.RootNode",
-    "x": -287,
-    "y": 249
+    "type": "NIN.RootNode"
   },
   {
     "id": "disco",
     "type": "DiscoFloorNode",
     "connectedTo": {
       "render": "root.screen"
-    },
-    "x": -409,
-    "y": 4
+    }
   }
 ]
