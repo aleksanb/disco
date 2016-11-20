@@ -51,12 +51,10 @@
       }
     }
 
-    toggle(layerIdx) {
+    set(layerIdx, active) {
       for (let tile of this.tileLayers[layerIdx]) {
         tile.material.color.setStyle(
-            tile.active ? this.colors[layerIdx % this.colors.length] : 'black');
-
-        tile.active = !tile.active;
+            active ? this.colors[layerIdx % this.colors.length] : 'black');
       }
     }
   }
@@ -106,18 +104,10 @@
 
     update(frame) {
       if (BEAT) {
-        if (BEAN % 8 == 0) {
-          this.floors.map(f => f.toggle(2))
-        }
-
-        if (BEAN % 6 == 2) {
-          this.floors.map(f => f.toggle(1))
-        }
-
-        if (BEAN % 4 == 0) {
-          this.floors.map(f => f.toggle(0))
-          this.floors.map(f => f.toggle(3))
-        }
+        this.floors.forEach(f => f.set(2, (BEAN % 16 < 8)));
+        this.floors.forEach(f => f.set(1, ((BEAN + 2) % 8 < 2)));
+        this.floors.forEach(f => f.set(0, (BEAN % 8 < 4)));
+        this.floors.forEach(f => f.set(3, (BEAN % 8 < 4)));
       }
     }
 
