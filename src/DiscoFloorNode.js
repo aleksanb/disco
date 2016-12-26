@@ -17,7 +17,7 @@
         for (var d=0; d<widthY; d++) {
           var tile = new THREE.Mesh(
               new THREE.BoxGeometry(width, 0.1, width),
-              new THREE.MeshBasicMaterial({ color: 'black' }));
+              new THREE.MeshLambertMaterial({ color: 'black' }));
 
           tile.position.set(w * (width + 1), 0, d * (width + 1));
 
@@ -83,32 +83,27 @@
       for (let i=0; i<2; i++) {
         for (let j=0; j<2; j++) {
           let floor = new Floor(4, 1);
-          floor.mesh.position.x = 57 * i;
-          floor.mesh.position.z = 50 * j;
+          floor.mesh.position.x = -57 * (i == 0);
+          floor.mesh.position.z = -50 * (j == 0);
 
           this.floors.push(floor);
           this.scene.add(floor.mesh);
         }
       }
 
-      //var light = new THREE.PointLight( 0xffffff, 1, 100 );
-      //light.position.set( -50, -50, -50 );
-      //this.scene.add(light);
-
-      //var pointLight = new THREE.PointLight(0xFFFFFF);
-      //pointLight.position.x = 10;
-      //pointLight.position.y = 50;
-      //pointLight.position.z = 130;
-      //this.scene.add(pointLight);
+      this.discoLight = new THREE.PointLight(0xFFFFFF);
+      this.scene.add(this.discoLight);
     }
 
     update(frame) {
       if (BEAT) {
-        this.floors.forEach(f => f.set(2, (BEAN % 16 < 8)));
-        this.floors.forEach(f => f.set(1, ((BEAN + 2) % 8 < 2)));
         this.floors.forEach(f => f.set(0, (BEAN % 8 < 4)));
+        this.floors.forEach(f => f.set(1, ((BEAN + 2) % 8 < 2)));
+        this.floors.forEach(f => f.set(2, (BEAN % 16 < 8)));
         this.floors.forEach(f => f.set(3, (BEAN % 8 < 4)));
       }
+
+      this.discoLight.position.y = frame / 10;
     }
 
     render(renderer) {

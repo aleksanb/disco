@@ -1,5 +1,9 @@
 [
   {
+    "id": "root",
+    "type": "NIN.RootNode"
+  },
+  {
     "id": "camera",
     "type": "NIN.CameraNode",
     "connectedTo": {
@@ -8,10 +12,6 @@
     "options": {
       "path": "res/disco.camera.json"
     }
-  },
-  {
-    "id": "root",
-    "type": "NIN.RootNode"
   },
   {
     "id": "disco",
