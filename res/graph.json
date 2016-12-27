@@ -17,7 +17,21 @@
     "id": "disco",
     "type": "DiscoFloorNode",
     "connectedTo": {
-      "render": "root.screen"
+      "render": "NodeSwitcherNode.B"
+    }
+  },
+  {
+    "id": "TunnelNode",
+    "type": "tunnelNode",
+    "connectedTo": {
+      "render": "NodeSwitcherNode.A"
+    }
+  },
+  {
+    "id": "NodeSwitcherNode",
+    "type": "nodeSwitcherNode",
+    "connectedTo": {
+      "selected": "root.screen"
     }
   }
 ]
