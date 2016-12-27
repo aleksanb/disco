@@ -2,7 +2,7 @@
   "position": [
     {
       "startFrame": 0,
-      "endFrame": 1000,
+      "endFrame": 2000,
       "points": [
         [150, 100, 150],
         [-150, 100, 150],
