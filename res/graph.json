@@ -29,9 +29,13 @@
   },
   {
     "id": "NodeSwitcherNode",
-    "type": "nodeSwitcherNode",
+    "type": "nodeSwitcherNode"
+  },
+  {
+    "id": "SpaceOddyseyNode",
+    "type": "spaceOddyseyNode",
     "connectedTo": {
-      "selected": "root.screen"
+      "render": "root.screen"
     }
   }
 ]

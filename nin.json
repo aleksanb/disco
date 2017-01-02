@@ -2,8 +2,8 @@
     "title": "Disco",
     "authors": ["capitalism"],
     "music": {
-        "bpm": 130,
+        "bpm": 84,
         "subdivision": 4,
-        "path": "res/ruzz.mp3"
+        "path": "res/p.mp3"
     }
 }
